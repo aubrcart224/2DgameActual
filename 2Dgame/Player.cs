@@ -27,7 +27,7 @@ namespace _2Dgame
         {
 
 
-            if (direction == "left")
+            if (direction == "left")  //
             {
                 x -= speed;
 
