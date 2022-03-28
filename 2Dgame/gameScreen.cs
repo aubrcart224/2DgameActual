@@ -14,7 +14,11 @@ namespace _2Dgame
     {
         int deaths = 0;
         Player hero;
+
+        // lists 
         List<eneny> enemies = new List<eneny>();
+        List<string> walls = new List<string>();
+        
 
         Size screenSize;
 
@@ -116,8 +120,17 @@ namespace _2Dgame
             foreach (eneny b in enemies)
             {
                 e.Graphics.FillEllipse(Brushes.Blue, b.x, b.y, b.size, b.size);
-               
+
                 //outlines 
+
+                
+
+                //List<Graphics> walls = new List<Graphics>();
+                //Graphics wall1 =  new e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
+                //Graphics wall2 = new DrawLine(Pens.Black, 140, 100, 140, 180);
+
+                //walls.Add("wall1") =  e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
+
                 e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
                 e.Graphics.DrawLine(Pens.Black, 140, 100, 140, 180);
                 e.Graphics.DrawLine(Pens.Black, 140, 220, 140, 310);

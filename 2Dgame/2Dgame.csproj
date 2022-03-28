@@ -71,6 +71,7 @@
     <Compile Include="menuScreen.Designer.cs">
       <DependentUpon>menuScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="outline.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

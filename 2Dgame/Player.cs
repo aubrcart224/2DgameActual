@@ -69,9 +69,6 @@ namespace _2Dgame
             }
         }
 
-        //public void Collisions()
-        //{
-
-        //}
+        
     }
 }
