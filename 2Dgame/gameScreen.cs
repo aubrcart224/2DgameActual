@@ -17,8 +17,9 @@ namespace _2Dgame
 
         // lists 
         List<eneny> enemies = new List<eneny>();
-        List<string> walls = new List<string>();
+        List<Rectangle> walls = new List<Rectangle>();
         
+
 
         Size screenSize;
 
@@ -47,6 +48,7 @@ namespace _2Dgame
             
             deathLable.Text =$"Deaths: {deaths}";
 
+            //enemies
             eneny enemy1= new eneny (150, 200, 0,-6);
             eneny enemy2 = new eneny(180, 200, 0,6);
             eneny enemy3 = new eneny(210, 200, 0, -6);
@@ -68,6 +70,39 @@ namespace _2Dgame
             enemies.Add(enemy8);
             enemies.Add(enemy9);
             enemies.Add(enemy10);
+
+            //walls border
+            //List<Rectangle> walls = new List<Rectangle>();
+            Rectangle wall1 = new Rectangle(140, 100, 300, 1);
+            Rectangle wall2 = new Rectangle(140, 100, 1, 80);
+            Rectangle wall3 = new Rectangle(140, 220, 1, 90);
+            Rectangle wall4 = new Rectangle(140, 310, 300, 1);
+            Rectangle wall5 = new Rectangle(440, 100, 1, 80);
+            Rectangle wall6 = new Rectangle(440, 220, 1, 90);
+            Rectangle wall7 = new Rectangle(90, 100, 1, 211);
+            Rectangle wall8 = new Rectangle(90, 100, 211, 1);
+            Rectangle wall9 = new Rectangle(90, 310, 50, 1);
+
+            walls.Add(wall1);
+            walls.Add(wall2);   
+            walls.Add(wall3);
+            walls.Add(wall4);
+            walls.Add(wall5);
+            walls.Add(wall6);
+            walls.Add(wall7);
+            walls.Add(wall8);
+            walls.Add(wall9);
+
+
+            //walls.Add("wall1") = e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
+
+            //e.Graphics.DrawLine(Pens.Black, 140, 100, 300, 1);
+            //e.Graphics.DrawLine(Pens.Black, 140, 100, 1, 80);
+            //e.Graphics.DrawLine(Pens.Black, 140, 220, 140, 310);
+            //e.Graphics.DrawLine(Pens.Black, 140, 310, 440, 310);
+            //e.Graphics.DrawLine(Pens.Black, 440, 100, 440, 180);
+            //e.Graphics.DrawLine(Pens.Black, 440, 220, 440, 310);
+
 
         }
 
@@ -115,39 +150,53 @@ namespace _2Dgame
 
         private void gameScreen_Paint(object sender, PaintEventArgs e)
         {
+            
+
+
+            //outlines 
+
+
+
+            //List<Graphics> walls = new List<Graphics>();
+            //Graphics wall1 = new e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
+            //Graphics wall2 = new DrawLine(Pens.Black, 140, 100, 140, 180);
+
+            //walls.Add("wall1") = e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
+
+            //e.Graphics.DrawLine(Pens.Black, 140, 100, 300, 1);
+            //e.Graphics.DrawLine(Pens.Black, 140, 100, 1, 80);
+            //e.Graphics.DrawLine(Pens.Black, 140, 220, 140, 310);
+            //e.Graphics.DrawLine(Pens.Black, 140, 310, 440, 310);
+            //e.Graphics.DrawLine(Pens.Black, 440, 100, 440, 180);
+            //e.Graphics.DrawLine(Pens.Black, 440, 220, 440, 310);
+
+            //start and end zones 
+            e.Graphics.FillRectangle(Brushes.LightGreen, 90, 100, 50, 211);
+            e.Graphics.FillRectangle(Brushes.LightGreen, 441, 100, 50, 211);
+            //player cube
             e.Graphics.FillRectangle(Brushes.Red, hero.x, hero.y, hero.width, hero.height);
 
             foreach (eneny b in enemies)
             {
                 e.Graphics.FillEllipse(Brushes.Blue, b.x, b.y, b.size, b.size);
 
-                //outlines 
-
-                
-
-                //List<Graphics> walls = new List<Graphics>();
-                //Graphics wall1 =  new e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
-                //Graphics wall2 = new DrawLine(Pens.Black, 140, 100, 140, 180);
-
-                //walls.Add("wall1") =  e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
-
-                e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
-                e.Graphics.DrawLine(Pens.Black, 140, 100, 140, 180);
-                e.Graphics.DrawLine(Pens.Black, 140, 220, 140, 310);
-                e.Graphics.DrawLine(Pens.Black, 140, 310, 440, 310);
-                e.Graphics.DrawLine(Pens.Black, 440, 100, 440, 180);
-                e.Graphics.DrawLine(Pens.Black, 440, 220, 440, 310);
-
-                //start and end zones 
-                e.Graphics.FillRectangle(Brushes.LightGreen, 90, 100,50,211);
-                e.Graphics.FillRectangle(Brushes.LightGreen, 441, 100, 50, 211);
+            }
+            foreach (Rectangle r in walls)
+            {
+                e.Graphics.DrawRectangle(Pens.Black, r.Left, r.Top, r.Width, r.Height);
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-
+            Rectangle herorec = new Rectangle(hero.x, hero.y, hero.width, hero.height);
+            int x = hero.x;
+            int y = hero.y;
+            
+            if (hero.x > 442)
+            {
+                
+            }
 
             foreach (eneny b in enemies)
             {
@@ -185,6 +234,17 @@ namespace _2Dgame
 
                 }
 
+
+            }
+            foreach (Rectangle r in walls)
+            {
+                if (r.IntersectsWith(herorec))
+                {
+                    hero.x = x;
+                    hero.y = y;
+                    break;
+
+                }
 
             }
 
