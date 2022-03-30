@@ -34,36 +34,101 @@ namespace _2Dgame
         {
             InitializeComponent();
             InitialzeGame();
+            LevelOne();
+            
+
         }
 
         public void InitialzeGame()
         {
 
-            screenSize = new Size(this.Width, this.Height);
-            int x = 50;
-            int y = 50;
             
-            hero = new Player(x, y);
 
             
             deathLable.Text =$"Deaths: {deaths}";
 
+            ////enemies
+            //eneny enemy1= new eneny (150, 200, 0,-7);
+            //eneny enemy2 = new eneny(180, 200, 0,7);
+            //eneny enemy3 = new eneny(210, 200, 0, -7);
+            //eneny enemy4 = new eneny(240, 200, 0, 7); 
+            //eneny enemy5 = new eneny(270, 200, 0, -7);
+            //eneny enemy6 = new eneny(300, 200, 0, 7);
+            //eneny enemy7 = new eneny(330, 200, 0, -7);
+            //eneny enemy8 = new eneny(360, 200, 0, 7);
+            //eneny enemy9 = new eneny(390, 200, 0, -7);
+            //eneny enemy10 = new eneny(420,200, 0, 7);
+
+            //enemies.Add(enemy1);
+            //enemies.Add(enemy2);
+            //enemies.Add(enemy3);
+            //enemies.Add(enemy4); 
+            //enemies.Add(enemy5);
+            //enemies.Add(enemy6);
+            //enemies.Add(enemy7);
+            //enemies.Add(enemy8);
+            //enemies.Add(enemy9);
+            //enemies.Add(enemy10);
+
+            ////walls border
+            ////List<Rectangle> walls = new List<Rectangle>();
+            //Rectangle wall1 = new Rectangle(140, 100, 300, 1);
+            //Rectangle wall2 = new Rectangle(140, 100, 1, 80);
+            //Rectangle wall3 = new Rectangle(140, 220, 1, 90);
+            //Rectangle wall4 = new Rectangle(140, 310, 300, 1);
+            //Rectangle wall5 = new Rectangle(440, 100, 1, 80);
+            //Rectangle wall6 = new Rectangle(440, 220, 1, 90);
+            //Rectangle wall7 = new Rectangle(90, 100, 1, 211);
+            //Rectangle wall8 = new Rectangle(90, 100, 211, 1);
+            //Rectangle wall9 = new Rectangle(90, 310, 50, 1);
+
+            //walls.Add(wall1);
+            //walls.Add(wall2);   
+            //walls.Add(wall3);
+            //walls.Add(wall4);
+            //walls.Add(wall5);
+            //walls.Add(wall6);
+            //walls.Add(wall7);
+            //walls.Add(wall8);
+            //walls.Add(wall9);
+
+
+            //walls.Add("wall1") = e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
+
+            //e.Graphics.DrawLine(Pens.Black, 140, 100, 300, 1);
+            //e.Graphics.DrawLine(Pens.Black, 140, 100, 1, 80);
+            //e.Graphics.DrawLine(Pens.Black, 140, 220, 140, 310);
+            //e.Graphics.DrawLine(Pens.Black, 140, 310, 440, 310);
+            //e.Graphics.DrawLine(Pens.Black, 440, 100, 440, 180);
+            //e.Graphics.DrawLine(Pens.Black, 440, 220, 440, 310);
+
+
+        }
+
+        public void LevelOne()
+        {
+            screenSize = new Size(this.Width, this.Height);
+            int x = 100;
+            int y = 150;
+
+            hero = new Player(x, y);
+
             //enemies
-            eneny enemy1= new eneny (150, 200, 0,-6);
-            eneny enemy2 = new eneny(180, 200, 0,6);
-            eneny enemy3 = new eneny(210, 200, 0, -6);
-            eneny enemy4 = new eneny(240, 200, 0, 6); 
-            eneny enemy5 = new eneny(270, 200, 0, -6);
-            eneny enemy6 = new eneny(300, 200, 0, 6);
-            eneny enemy7 = new eneny(330, 200, 0, -6);
-            eneny enemy8 = new eneny(360, 200, 0, 6);
-            eneny enemy9 = new eneny(390, 200, 0, -6);
-            eneny enemy10 = new eneny(420,200, 0, 6);
+            eneny enemy1 = new eneny(150, 200, 0, -7);
+            eneny enemy2 = new eneny(180, 200, 0, 7);
+            eneny enemy3 = new eneny(210, 200, 0, -7);
+            eneny enemy4 = new eneny(240, 200, 0, 7);
+            eneny enemy5 = new eneny(270, 200, 0, -7);
+            eneny enemy6 = new eneny(300, 200, 0, 7);
+            eneny enemy7 = new eneny(330, 200, 0, -7);
+            eneny enemy8 = new eneny(360, 200, 0, 7);
+            eneny enemy9 = new eneny(390, 200, 0, -7);
+            eneny enemy10 = new eneny(420, 200, 0, 7);
 
             enemies.Add(enemy1);
             enemies.Add(enemy2);
             enemies.Add(enemy3);
-            enemies.Add(enemy4); 
+            enemies.Add(enemy4);
             enemies.Add(enemy5);
             enemies.Add(enemy6);
             enemies.Add(enemy7);
@@ -84,7 +149,7 @@ namespace _2Dgame
             Rectangle wall9 = new Rectangle(90, 310, 50, 1);
 
             walls.Add(wall1);
-            walls.Add(wall2);   
+            walls.Add(wall2);
             walls.Add(wall3);
             walls.Add(wall4);
             walls.Add(wall5);
@@ -92,20 +157,65 @@ namespace _2Dgame
             walls.Add(wall7);
             walls.Add(wall8);
             walls.Add(wall9);
-
-
-            //walls.Add("wall1") = e.Graphics.DrawLine(Pens.Black, 140, 100, 440, 100);
-
-            //e.Graphics.DrawLine(Pens.Black, 140, 100, 300, 1);
-            //e.Graphics.DrawLine(Pens.Black, 140, 100, 1, 80);
-            //e.Graphics.DrawLine(Pens.Black, 140, 220, 140, 310);
-            //e.Graphics.DrawLine(Pens.Black, 140, 310, 440, 310);
-            //e.Graphics.DrawLine(Pens.Black, 440, 100, 440, 180);
-            //e.Graphics.DrawLine(Pens.Black, 440, 220, 440, 310);
-
-
         }
 
+        public void LevelTwo()
+        {
+            
+            enemies.Clear();
+            walls.Clear();
+
+            screenSize = new Size(this.Width, this.Height);
+            int x = 100;
+            int y = 150;
+
+            hero = new Player(x, y);
+
+            //enemies
+            eneny enemy1 = new eneny(150, 200, 0, -7);
+            eneny enemy2 = new eneny(180, 200, 0, 7);
+            eneny enemy3 = new eneny(210, 200, 0, -7);
+            eneny enemy4 = new eneny(240, 200, 0, 7);
+            eneny enemy5 = new eneny(270, 200, 0, -7);
+            eneny enemy6 = new eneny(300, 200, 0, 7);
+            eneny enemy7 = new eneny(330, 200, 0, -7);
+            eneny enemy8 = new eneny(360, 200, 0, 7);
+            eneny enemy9 = new eneny(390, 200, 0, -7);
+            eneny enemy10 = new eneny(420, 200, 0, 7);
+
+            enemies.Add(enemy1);
+            enemies.Add(enemy2);
+            enemies.Add(enemy3);
+            enemies.Add(enemy4);
+            enemies.Add(enemy5);
+            enemies.Add(enemy6);
+            enemies.Add(enemy7);
+            enemies.Add(enemy8);
+            enemies.Add(enemy9);
+            enemies.Add(enemy10);
+
+            //walls border
+            //List<Rectangle> walls = new List<Rectangle>();
+            Rectangle wall1 = new Rectangle(140, 100, 300, 1);
+            Rectangle wall2 = new Rectangle(140, 100, 1, 80);
+            Rectangle wall3 = new Rectangle(140, 220, 1, 90);
+            Rectangle wall4 = new Rectangle(140, 310, 300, 1);
+            Rectangle wall5 = new Rectangle(440, 100, 1, 80);
+            Rectangle wall6 = new Rectangle(440, 220, 1, 90);
+            Rectangle wall7 = new Rectangle(90, 100, 1, 211);
+            Rectangle wall8 = new Rectangle(90, 100, 211, 1);
+            Rectangle wall9 = new Rectangle(90, 310, 50, 1);
+
+            walls.Add(wall1);
+            walls.Add(wall2);
+            walls.Add(wall3);
+            walls.Add(wall4);
+            walls.Add(wall5);
+            walls.Add(wall6);
+            walls.Add(wall7);
+            walls.Add(wall8);
+            walls.Add(wall9);
+        }
 
         private void gameScreen_KeyUp(object sender, KeyEventArgs e)
         {
@@ -189,14 +299,12 @@ namespace _2Dgame
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Rectangle herorec = new Rectangle(hero.x, hero.y, hero.width, hero.height);
             int x = hero.x;
             int y = hero.y;
             
-            if (hero.x > 442)
-            {
-                
-            }
+            
+            
+           
 
             foreach (eneny b in enemies)
             {
@@ -222,6 +330,8 @@ namespace _2Dgame
                 hero.Move("down", screenSize);
             }
 
+            Rectangle herorec = new Rectangle(hero.x, hero.y, hero.width, hero.height);
+
             foreach (eneny b in enemies)
             {
                 if (b.Collision(hero))
@@ -246,6 +356,11 @@ namespace _2Dgame
 
                 }
 
+            }
+
+            if (hero.x > 442)
+            {
+                LevelTwo();
             }
 
             Refresh();
