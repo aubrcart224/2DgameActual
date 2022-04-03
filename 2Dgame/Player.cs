@@ -9,8 +9,6 @@ namespace _2Dgame
 {
     internal class Player
     {
-       // List<Balls> dodgeballs = new List<Balls>();
-
 
         public int width = 17;
         public int height = 17;
@@ -23,11 +21,12 @@ namespace _2Dgame
             y = _y;
         }
 
+        // move player method 
         public void Move(string direction, Size ss)
         {
 
 
-            if (direction == "left")  //
+            if (direction == "left")  
             {
                 x -= speed;
 

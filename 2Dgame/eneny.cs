@@ -13,6 +13,7 @@ namespace _2Dgame
         public int xSpeed, ySpeed;
         public int x, y;
 
+        // enemy 
         public eneny(int _x, int _y, int _xSpeed, int _ySpeed)
         {
             x = _x;
@@ -21,6 +22,8 @@ namespace _2Dgame
             ySpeed = _ySpeed;
         }
 
+
+        // move method of enemies 
         public void Move(Size ss)
         {
             x += xSpeed;
@@ -30,9 +33,14 @@ namespace _2Dgame
             {
                 ySpeed *= -1;
             }
+            if (x < 144 || x > 420)
+            {
+                xSpeed *= -1;
+            }
         }
 
 
+        // check if player collieds with enemy 
         public bool Collision(Player p)
         {
             Rectangle ballRec = new Rectangle(x, y, size, size);
